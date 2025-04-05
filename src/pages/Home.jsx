@@ -9,9 +9,8 @@ const Home = () => {
             <div className="hero">
                 <div className="overlay"></div>
                 <div className="container position-relative">
-                    <h1>One-Stop Networking Tool</h1>
+                    <h2>Networking Made Easy.</h2>
                     <p>By Vihaan Shah and Aanand Patel</p>
-                    {/* <a href="#" className="btn btn-primary mt-3">Get Started</a> */}
                 </div>
             </div>
         </div>
