@@ -1,0 +1,33 @@
+/* Use a Google Font in your index.html or via an import in your main CSS file */
+body {
+    font-family: 'Fira Code', monospace;
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    background: url('/bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Overlay to darken the background for better text readability */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+  }
+  
+  /* Ensure the content is above the overlay */
+  .container.position-relative {
+    z-index: 2;
+  }
