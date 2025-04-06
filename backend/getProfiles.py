@@ -1,4 +1,5 @@
 import time 
+import tempfile
 from flask import Flask, request, jsonify
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,6 +16,8 @@ def getProfiles(job_title, company, university):
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     driver = webdriver.Chrome(options=options)
+    temp_dir = tempfile.mkdtemp()
+    options.add_argument(f"--user-data-dir={temp_dir}")
 
     # ----- GO TO GOOGLE SEARCH -----
     driver.get(search_url)
