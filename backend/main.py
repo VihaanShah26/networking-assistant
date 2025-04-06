@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -7,6 +8,7 @@ from getProfiles import getProfiles
 from getEmail import getEmail
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/get_profiles')
 def get_profiles():

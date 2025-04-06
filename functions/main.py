@@ -33,6 +33,11 @@ def getEmail(req):
 
     response = requests.post(url, headers=headers).text
     res = json.loads(response)
+    res.headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+    }
  
     return res
 

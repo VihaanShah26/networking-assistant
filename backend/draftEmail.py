@@ -11,7 +11,7 @@ def draftEmail(myname, university, major, name, company, linkedin):
 
     response = client.responses.create(
         model="gpt-4o-mini",
-        tools=[{"type": "web_search"}],
+        tools=[{"type": "web_search_preview"}],
         input=prompt
     )
 

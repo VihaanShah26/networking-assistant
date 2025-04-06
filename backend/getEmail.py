@@ -8,7 +8,7 @@ def getEmail(name, company):
         "accept": "application/json",
         "Cache-Control": "no-cache",
         "Content-Type": "application/json",
-        "x-api-key": "5ljZFXx2HQAFBmRNJ08eUA"
+        "x-api-key": "KyCgvOFBDFo9dS9OABqkSA"
     }
 
     response = requests.post(url, headers=headers).text

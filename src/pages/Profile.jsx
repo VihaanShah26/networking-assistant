@@ -11,7 +11,10 @@ const Profile = () => {
         firstName: '',
         lastName: '',
         university: '',
-        resume: null
+        resume: null,
+        major: '',
+        emailSubject: '',
+        emailBody: '',
     });
 
     const [user] = useAuthState();
@@ -66,7 +69,8 @@ const Profile = () => {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 university: formData.university,
-                resume: formData.resume  
+                resume: formData.resume ,
+                major: formData.major
             };
 
             await setDoc(userRef, profileData, { merge: true });
@@ -119,6 +123,17 @@ const Profile = () => {
                             />
                         </div>
                         <div className="mb-3">
+                            <label className="form-label">Area of Study</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="major"
+                                value={formData.major}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="mb-3">
                             <label className="form-label">Upload Resume</label>
                             <input
                                 type="file"
@@ -127,6 +142,25 @@ const Profile = () => {
                                 onChange={handleChange}
                                 accept=".pdf,.doc,.docx"
                                 required
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Email Subject</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="emailSubject"
+                                value={formData.emailSubject}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Email Body</label>
+                            <textarea
+                                className="form-control"
+                                name="emailBody"
+                                value={formData.emailBody}
+                                onChange={handleChange}
                             />
                         </div>
                         <button type="submit" className="btn btn-primary w-100">Save Profile</button>
