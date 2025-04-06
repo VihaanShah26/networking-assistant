@@ -12,7 +12,7 @@ def getProfiles(job_title, company, university):
 
     # ----- SETUP CHROME -----
     options = Options()
-    # options.add_argument("--headless=new")  # new headless mode
+    options.add_argument("--headless=new")  # new headless mode
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     driver = webdriver.Chrome(options=options)
@@ -47,4 +47,7 @@ def getProfiles(job_title, company, university):
 
     driver.quit()
         
-    return jsonify(profiles)
+    return profiles
+
+
+print(getProfiles("Software Engineer", "Amazon", "Northwestern University"))

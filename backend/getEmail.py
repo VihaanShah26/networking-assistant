@@ -16,4 +16,4 @@ def getEmail(name, company):
  
     return res
 
-print(getEmail("Klaudia Bogacz", "Amazon"))
+print(getEmail("Klaudia Bogacz", "Optiver"))

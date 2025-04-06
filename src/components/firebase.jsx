@@ -4,7 +4,6 @@ import { initializeApp } from "firebase/app";
 import { useEffect, useState } from 'react';
 import { get, getDatabase, onValue, ref, update } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
-import { https_fn } from 'firebase/functions';
 import { useCallback } from 'react';
 import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
@@ -26,8 +25,6 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const database = getDatabase(app);
 export const db = getFirestore(app);
-
-export const functions = https_fn(app);
 
 const firebaseSignOut = () => signOut(getAuth(app));
 
