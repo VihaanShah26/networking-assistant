@@ -16,11 +16,6 @@ import tempfile
 
 initialize_app()
 
-
-@https_fn.on_request()
-def on_request_example(req: https_fn.Request) -> https_fn.Response:
-    return https_fn.Response("Hello world!")
-
 @https_fn.on_request()
 def getEmail(req):
 
@@ -53,7 +48,7 @@ def getProfiles(req):
 
     # ----- SETUP CHROME -----
     options = Options()
-    options.add_argument("--headless=new")  # new headless mode
+    # options.add_argument("--headless=new")  # new headless mode
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     driver = webdriver.Chrome(options=options)
