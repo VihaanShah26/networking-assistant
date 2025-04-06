@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { useEffect, useState } from 'react';
 import { get, getDatabase, onValue, ref, update } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
+import { https_fn } from 'firebase/functions';
 import { useCallback } from 'react';
 import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
@@ -26,17 +27,13 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 export const db = getFirestore(app);
 
+export const functions = https_fn(app);
+
 const firebaseSignOut = () => signOut(getAuth(app));
 
 export const signInWithGoogle = async () => {
     const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
     const user = result.user;
-    console.log(user.email);
-    // if (!user.email.endsWith("northwestern.edu")) {
-    //     alert("Only Northwestern University email ids are allowed.");
-    //     firebaseSignOut();
-    //     return;
-    //   }
 };
 
 export { firebaseSignOut as signOut };
